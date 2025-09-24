@@ -1,0 +1,466 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "AWSSDK.ApiGatewayV2/4.0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.0.26, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.ApiGatewayV2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.ApiGatewayV2.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.Core/4.0.0.28": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.EventBridge/4.0.4.2": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.0.28, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.EventBridge.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.EventBridge.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.IdentityManagement/4.0.3.3": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.0.28, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.IdentityManagement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.IdentityManagement.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.Lambda/4.0.2.8": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.0.26, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.Lambda.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Lambda.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.Scheduler/4.0.1.2": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.0.28, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.Scheduler.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Scheduler.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.SecurityToken/4.0.2.2": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.0.28, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.SecurityToken.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.SecurityToken.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.SQS/4.0.1.3": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.0.28, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.SQS.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.SQS.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AWSSDK.ApiGatewayV2/4.0.2.1": {
+      "sha512": "28k22db1SPLVI0JI/Al8LyiR1mlvPA+U1HpUtYdLFIE3+rrL2W07EVRUvXKBgKzXOEHiMu6eW4it7HJStFYMJw==",
+      "type": "package",
+      "path": "awssdk.apigatewayv2/4.0.2.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.ApiGatewayV2.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.apigatewayv2.4.0.2.1.nupkg.sha512",
+        "awssdk.apigatewayv2.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.ApiGatewayV2.dll",
+        "lib/net472/AWSSDK.ApiGatewayV2.pdb",
+        "lib/net472/AWSSDK.ApiGatewayV2.xml",
+        "lib/net8.0/AWSSDK.ApiGatewayV2.dll",
+        "lib/net8.0/AWSSDK.ApiGatewayV2.pdb",
+        "lib/net8.0/AWSSDK.ApiGatewayV2.xml",
+        "lib/netcoreapp3.1/AWSSDK.ApiGatewayV2.dll",
+        "lib/netcoreapp3.1/AWSSDK.ApiGatewayV2.pdb",
+        "lib/netcoreapp3.1/AWSSDK.ApiGatewayV2.xml",
+        "lib/netstandard2.0/AWSSDK.ApiGatewayV2.dll",
+        "lib/netstandard2.0/AWSSDK.ApiGatewayV2.pdb",
+        "lib/netstandard2.0/AWSSDK.ApiGatewayV2.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.Core/4.0.0.28": {
+      "sha512": "CwCRCIbkDEc7DHwhk7BFt6k8985ytWyqwmRCiavI5/INkTyA/xSKXHS8jm8n/Xq74eRKfX7uAnD5hvI3TqpT0g==",
+      "type": "package",
+      "path": "awssdk.core/4.0.0.28",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.core.4.0.0.28.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.Core.dll",
+        "lib/net472/AWSSDK.Core.pdb",
+        "lib/net472/AWSSDK.Core.xml",
+        "lib/net8.0/AWSSDK.Core.dll",
+        "lib/net8.0/AWSSDK.Core.pdb",
+        "lib/net8.0/AWSSDK.Core.xml",
+        "lib/netcoreapp3.1/AWSSDK.Core.dll",
+        "lib/netcoreapp3.1/AWSSDK.Core.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Core.xml",
+        "lib/netstandard2.0/AWSSDK.Core.dll",
+        "lib/netstandard2.0/AWSSDK.Core.pdb",
+        "lib/netstandard2.0/AWSSDK.Core.xml",
+        "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.EventBridge/4.0.4.2": {
+      "sha512": "Kkofolb36unnQwGiOR+dY3KYmbS+jaXSvOBkGYXwqC/7rRPZFSNFN25t9muoWymsGuPeziMUJebE+QGomP5edA==",
+      "type": "package",
+      "path": "awssdk.eventbridge/4.0.4.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.EventBridge.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.eventbridge.4.0.4.2.nupkg.sha512",
+        "awssdk.eventbridge.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.EventBridge.dll",
+        "lib/net472/AWSSDK.EventBridge.pdb",
+        "lib/net472/AWSSDK.EventBridge.xml",
+        "lib/net8.0/AWSSDK.EventBridge.dll",
+        "lib/net8.0/AWSSDK.EventBridge.pdb",
+        "lib/net8.0/AWSSDK.EventBridge.xml",
+        "lib/netcoreapp3.1/AWSSDK.EventBridge.dll",
+        "lib/netcoreapp3.1/AWSSDK.EventBridge.pdb",
+        "lib/netcoreapp3.1/AWSSDK.EventBridge.xml",
+        "lib/netstandard2.0/AWSSDK.EventBridge.dll",
+        "lib/netstandard2.0/AWSSDK.EventBridge.pdb",
+        "lib/netstandard2.0/AWSSDK.EventBridge.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.IdentityManagement/4.0.3.3": {
+      "sha512": "lMJQMowj2myDXEiZz/vSf2H7IYBv7IU0KwJDYvlXQG2fDqkl9s8DaTVyhL7VYYUAHKgGVi47Jm+k6hYFFsS/IQ==",
+      "type": "package",
+      "path": "awssdk.identitymanagement/4.0.3.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.IdentityManagement.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.identitymanagement.4.0.3.3.nupkg.sha512",
+        "awssdk.identitymanagement.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.IdentityManagement.dll",
+        "lib/net472/AWSSDK.IdentityManagement.pdb",
+        "lib/net472/AWSSDK.IdentityManagement.xml",
+        "lib/net8.0/AWSSDK.IdentityManagement.dll",
+        "lib/net8.0/AWSSDK.IdentityManagement.pdb",
+        "lib/net8.0/AWSSDK.IdentityManagement.xml",
+        "lib/netcoreapp3.1/AWSSDK.IdentityManagement.dll",
+        "lib/netcoreapp3.1/AWSSDK.IdentityManagement.pdb",
+        "lib/netcoreapp3.1/AWSSDK.IdentityManagement.xml",
+        "lib/netstandard2.0/AWSSDK.IdentityManagement.dll",
+        "lib/netstandard2.0/AWSSDK.IdentityManagement.pdb",
+        "lib/netstandard2.0/AWSSDK.IdentityManagement.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.Lambda/4.0.2.8": {
+      "sha512": "Lc3PDx4bcepIxgW80iKckdoJEvO8rtOfWgrWcu6uUtVlz3TtGfCl1LaIgT666VIoUGbwAl6nXLvbI29KPxf3Fg==",
+      "type": "package",
+      "path": "awssdk.lambda/4.0.2.8",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.Lambda.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.lambda.4.0.2.8.nupkg.sha512",
+        "awssdk.lambda.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.Lambda.dll",
+        "lib/net472/AWSSDK.Lambda.pdb",
+        "lib/net472/AWSSDK.Lambda.xml",
+        "lib/net8.0/AWSSDK.Lambda.dll",
+        "lib/net8.0/AWSSDK.Lambda.pdb",
+        "lib/net8.0/AWSSDK.Lambda.xml",
+        "lib/netcoreapp3.1/AWSSDK.Lambda.dll",
+        "lib/netcoreapp3.1/AWSSDK.Lambda.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Lambda.xml",
+        "lib/netstandard2.0/AWSSDK.Lambda.dll",
+        "lib/netstandard2.0/AWSSDK.Lambda.pdb",
+        "lib/netstandard2.0/AWSSDK.Lambda.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.Scheduler/4.0.1.2": {
+      "sha512": "ifnoqxfptLs2r5Ia02O8hjNkPgo4PPSjLZ660uuir9roFZot6vYOmoUQv67QOKruzHH3oSrIGe3j5f+H/95DYQ==",
+      "type": "package",
+      "path": "awssdk.scheduler/4.0.1.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.Scheduler.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.scheduler.4.0.1.2.nupkg.sha512",
+        "awssdk.scheduler.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.Scheduler.dll",
+        "lib/net472/AWSSDK.Scheduler.pdb",
+        "lib/net472/AWSSDK.Scheduler.xml",
+        "lib/net8.0/AWSSDK.Scheduler.dll",
+        "lib/net8.0/AWSSDK.Scheduler.pdb",
+        "lib/net8.0/AWSSDK.Scheduler.xml",
+        "lib/netcoreapp3.1/AWSSDK.Scheduler.dll",
+        "lib/netcoreapp3.1/AWSSDK.Scheduler.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Scheduler.xml",
+        "lib/netstandard2.0/AWSSDK.Scheduler.dll",
+        "lib/netstandard2.0/AWSSDK.Scheduler.pdb",
+        "lib/netstandard2.0/AWSSDK.Scheduler.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.SecurityToken/4.0.2.2": {
+      "sha512": "fmFdwcZqts1Y27O6owJ/bLRU4tqfpMkPhlnaBIkPDeiGRYgpr7YL2cUBSPr/11g3UELldLZovwhQSxyQTKlNCw==",
+      "type": "package",
+      "path": "awssdk.securitytoken/4.0.2.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.SecurityToken.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.securitytoken.4.0.2.2.nupkg.sha512",
+        "awssdk.securitytoken.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.SecurityToken.dll",
+        "lib/net472/AWSSDK.SecurityToken.pdb",
+        "lib/net472/AWSSDK.SecurityToken.xml",
+        "lib/net8.0/AWSSDK.SecurityToken.dll",
+        "lib/net8.0/AWSSDK.SecurityToken.pdb",
+        "lib/net8.0/AWSSDK.SecurityToken.xml",
+        "lib/netcoreapp3.1/AWSSDK.SecurityToken.dll",
+        "lib/netcoreapp3.1/AWSSDK.SecurityToken.pdb",
+        "lib/netcoreapp3.1/AWSSDK.SecurityToken.xml",
+        "lib/netstandard2.0/AWSSDK.SecurityToken.dll",
+        "lib/netstandard2.0/AWSSDK.SecurityToken.pdb",
+        "lib/netstandard2.0/AWSSDK.SecurityToken.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.SQS/4.0.1.3": {
+      "sha512": "8k9QY3fnGfI1TX0wbEBaEbaQcNoMavNB7U+Cl99r/cxomsXvVZd3Rc5eBr7gItSQlzmq3a2HHfC5/AeNmF1q0g==",
+      "type": "package",
+      "path": "awssdk.sqs/4.0.1.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.SQS.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.sqs.4.0.1.3.nupkg.sha512",
+        "awssdk.sqs.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.SQS.dll",
+        "lib/net472/AWSSDK.SQS.pdb",
+        "lib/net472/AWSSDK.SQS.xml",
+        "lib/net8.0/AWSSDK.SQS.dll",
+        "lib/net8.0/AWSSDK.SQS.pdb",
+        "lib/net8.0/AWSSDK.SQS.xml",
+        "lib/netcoreapp3.1/AWSSDK.SQS.dll",
+        "lib/netcoreapp3.1/AWSSDK.SQS.pdb",
+        "lib/netcoreapp3.1/AWSSDK.SQS.xml",
+        "lib/netstandard2.0/AWSSDK.SQS.dll",
+        "lib/netstandard2.0/AWSSDK.SQS.pdb",
+        "lib/netstandard2.0/AWSSDK.SQS.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "AWSSDK.ApiGatewayV2 >= 4.0.2.1",
+      "AWSSDK.EventBridge >= 4.0.4.2",
+      "AWSSDK.IdentityManagement >= 4.0.3.3",
+      "AWSSDK.Lambda >= 4.0.2.8",
+      "AWSSDK.SQS >= 4.0.1.3",
+      "AWSSDK.Scheduler >= 4.0.1.2",
+      "AWSSDK.SecurityToken >= 4.0.2.2"
+    ]
+  },
+  "packageFolders": {
+    "/Users/carlosdaboin/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/carlosdaboin/Alkami/AWS-Apps/AwsEventManager/AwsEventManager/AwsEventManager.csproj",
+      "projectName": "AwsEventManager",
+      "projectPath": "/Users/carlosdaboin/Alkami/AWS-Apps/AwsEventManager/AwsEventManager/AwsEventManager.csproj",
+      "packagesPath": "/Users/carlosdaboin/.nuget/packages/",
+      "outputPath": "/Users/carlosdaboin/Alkami/AWS-Apps/AwsEventManager/AwsEventManager/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/carlosdaboin/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "dependencies": {
+          "AWSSDK.ApiGatewayV2": {
+            "target": "Package",
+            "version": "[4.0.2.1, )"
+          },
+          "AWSSDK.EventBridge": {
+            "target": "Package",
+            "version": "[4.0.4.2, )"
+          },
+          "AWSSDK.IdentityManagement": {
+            "target": "Package",
+            "version": "[4.0.3.3, )"
+          },
+          "AWSSDK.Lambda": {
+            "target": "Package",
+            "version": "[4.0.2.8, )"
+          },
+          "AWSSDK.SQS": {
+            "target": "Package",
+            "version": "[4.0.1.3, )"
+          },
+          "AWSSDK.Scheduler": {
+            "target": "Package",
+            "version": "[4.0.1.2, )"
+          },
+          "AWSSDK.SecurityToken": {
+            "target": "Package",
+            "version": "[4.0.2.2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

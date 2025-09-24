@@ -1,0 +1,173 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "AwsEventManager/1.0.0": {
+        "dependencies": {
+          "AWSSDK.ApiGatewayV2": "4.0.2.1",
+          "AWSSDK.EventBridge": "4.0.4.2",
+          "AWSSDK.IdentityManagement": "4.0.3.3",
+          "AWSSDK.Lambda": "4.0.2.8",
+          "AWSSDK.SQS": "4.0.1.3",
+          "AWSSDK.Scheduler": "4.0.1.2",
+          "AWSSDK.SecurityToken": "4.0.2.2"
+        },
+        "runtime": {
+          "AwsEventManager.dll": {}
+        }
+      },
+      "AWSSDK.ApiGatewayV2/4.0.2.1": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.0.28"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.ApiGatewayV2.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.2.1"
+          }
+        }
+      },
+      "AWSSDK.Core/4.0.0.28": {
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.28"
+          }
+        }
+      },
+      "AWSSDK.EventBridge/4.0.4.2": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.0.28"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.EventBridge.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.4.2"
+          }
+        }
+      },
+      "AWSSDK.IdentityManagement/4.0.3.3": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.0.28"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.IdentityManagement.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.3.3"
+          }
+        }
+      },
+      "AWSSDK.Lambda/4.0.2.8": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.0.28"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Lambda.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.2.8"
+          }
+        }
+      },
+      "AWSSDK.Scheduler/4.0.1.2": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.0.28"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Scheduler.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.1.2"
+          }
+        }
+      },
+      "AWSSDK.SecurityToken/4.0.2.2": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.0.28"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.SecurityToken.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.2.2"
+          }
+        }
+      },
+      "AWSSDK.SQS/4.0.1.3": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.0.28"
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.SQS.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.1.3"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AwsEventManager/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AWSSDK.ApiGatewayV2/4.0.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-28k22db1SPLVI0JI/Al8LyiR1mlvPA+U1HpUtYdLFIE3+rrL2W07EVRUvXKBgKzXOEHiMu6eW4it7HJStFYMJw==",
+      "path": "awssdk.apigatewayv2/4.0.2.1",
+      "hashPath": "awssdk.apigatewayv2.4.0.2.1.nupkg.sha512"
+    },
+    "AWSSDK.Core/4.0.0.28": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CwCRCIbkDEc7DHwhk7BFt6k8985ytWyqwmRCiavI5/INkTyA/xSKXHS8jm8n/Xq74eRKfX7uAnD5hvI3TqpT0g==",
+      "path": "awssdk.core/4.0.0.28",
+      "hashPath": "awssdk.core.4.0.0.28.nupkg.sha512"
+    },
+    "AWSSDK.EventBridge/4.0.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Kkofolb36unnQwGiOR+dY3KYmbS+jaXSvOBkGYXwqC/7rRPZFSNFN25t9muoWymsGuPeziMUJebE+QGomP5edA==",
+      "path": "awssdk.eventbridge/4.0.4.2",
+      "hashPath": "awssdk.eventbridge.4.0.4.2.nupkg.sha512"
+    },
+    "AWSSDK.IdentityManagement/4.0.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lMJQMowj2myDXEiZz/vSf2H7IYBv7IU0KwJDYvlXQG2fDqkl9s8DaTVyhL7VYYUAHKgGVi47Jm+k6hYFFsS/IQ==",
+      "path": "awssdk.identitymanagement/4.0.3.3",
+      "hashPath": "awssdk.identitymanagement.4.0.3.3.nupkg.sha512"
+    },
+    "AWSSDK.Lambda/4.0.2.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Lc3PDx4bcepIxgW80iKckdoJEvO8rtOfWgrWcu6uUtVlz3TtGfCl1LaIgT666VIoUGbwAl6nXLvbI29KPxf3Fg==",
+      "path": "awssdk.lambda/4.0.2.8",
+      "hashPath": "awssdk.lambda.4.0.2.8.nupkg.sha512"
+    },
+    "AWSSDK.Scheduler/4.0.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ifnoqxfptLs2r5Ia02O8hjNkPgo4PPSjLZ660uuir9roFZot6vYOmoUQv67QOKruzHH3oSrIGe3j5f+H/95DYQ==",
+      "path": "awssdk.scheduler/4.0.1.2",
+      "hashPath": "awssdk.scheduler.4.0.1.2.nupkg.sha512"
+    },
+    "AWSSDK.SecurityToken/4.0.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fmFdwcZqts1Y27O6owJ/bLRU4tqfpMkPhlnaBIkPDeiGRYgpr7YL2cUBSPr/11g3UELldLZovwhQSxyQTKlNCw==",
+      "path": "awssdk.securitytoken/4.0.2.2",
+      "hashPath": "awssdk.securitytoken.4.0.2.2.nupkg.sha512"
+    },
+    "AWSSDK.SQS/4.0.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8k9QY3fnGfI1TX0wbEBaEbaQcNoMavNB7U+Cl99r/cxomsXvVZd3Rc5eBr7gItSQlzmq3a2HHfC5/AeNmF1q0g==",
+      "path": "awssdk.sqs/4.0.1.3",
+      "hashPath": "awssdk.sqs.4.0.1.3.nupkg.sha512"
+    }
+  }
+}
