@@ -1,11 +1,9 @@
-using System.Net;
 using Amazon;
 using Amazon.ApiGatewayV2;
 using Amazon.ApiGatewayV2.Model;
 using Amazon.EventBridge;
 using Amazon.EventBridge.Model;
-using Amazon.Lambda;
-using Amazon.Lambda.Model;
+using Amazon.Runtime;
 using Amazon.Scheduler;
 using Amazon.Scheduler.Model;
 using ResourceNotFoundException = Amazon.SQS.Model.ResourceNotFoundException;
@@ -20,17 +18,16 @@ public class EventBridgeService
     private AmazonApiGatewayV2Client _apiGatewayClient;
     private IdentityService _identityService;
 
-    public EventBridgeService(RegionEndpoint awsRegion)
+    public EventBridgeService(RegionEndpoint awsRegion, AWSCredentials credentials)
     {
-        _eventBridgeClient = new AmazonEventBridgeClient(awsRegion);
-        _schedulerClient = new AmazonSchedulerClient(awsRegion);
-        _apiGatewayClient = new AmazonApiGatewayV2Client(awsRegion);
+        _eventBridgeClient = new AmazonEventBridgeClient(credentials,awsRegion);
+        _schedulerClient = new AmazonSchedulerClient(credentials, awsRegion);
+        _apiGatewayClient = new AmazonApiGatewayV2Client(credentials, awsRegion);
         _identityService = new IdentityService(awsRegion);
     }
 
     public async Task<Amazon.EventBridge.Model.CreateConnectionResponse> GetOrCreateEventBridgeConnectionAsync(
         string connectionName,
-        RegionEndpoint awsRegion,
         CancellationToken cancellationToken)
     {
         try
@@ -93,7 +90,8 @@ public class EventBridgeService
         }
     }
 
-    public async Task<CreateApiDestinationResponse> GetOrCreateEventBridgeApiDestinationAsync(string connectionArn,
+    public async Task<CreateApiDestinationResponse> GetOrCreateEventBridgeApiDestinationAsync(
+        string connectionArn,
         string apiDestinationName,
         CancellationToken cancellationToken)
     {
@@ -150,118 +148,39 @@ public class EventBridgeService
         }
     }
 
-    public async Task<Amazon.Scheduler.Model.CreateScheduleResponse> CreateSchedulerEventForDestinationApiAsync(
-        string apiDestinationName, string roleArn)
-    {
-        //arn:aws:events:us-east-2:848362861133:api-destination/event-bridge-api-dest/b419f733-0dfa-48c6-9917-806b9a9f731a
-        try
-        {
-            var identity = await _identityService.GetAccountIdAsync();
-            // Schedule name
-            string scheduleName = "MyApiDestinationSchedule";
-            var request = new CreateScheduleRequest
-            {
-                Name = scheduleName,
-                Description = "Schedule to call my API Destination every 5 minutes",
-
-                // Target configuration
-                Target = new Amazon.Scheduler.Model.Target
-                {
-                    //Arn = $"arn:aws:scheduler:::api-destination/{apiDestinationName}",
-                    //Arn = $"arn:aws:events:us-east-2:{identity}:api-destination/event-bridge-api-dest",
-                    Arn = "arn:aws:scheduler:::aws-sdk/EventBridge/CreateApiDestination",
-                    RoleArn = roleArn,
-                    Input = "{\"Name\": \"" + apiDestinationName + "\"}",
-                    //Input = "{ \"message\": \"app message\"}",
-                    RetryPolicy = new Amazon.Scheduler.Model.RetryPolicy
-                    {
-                        MaximumRetryAttempts = 2,
-                        MaximumEventAgeInSeconds = 3600
-                    }
-                },
-
-                // Schedule expression (rate or cron)
-                ScheduleExpression = "rate(1 minutes)", // or cron(0/1 * * * ? *) for every 1 minutes
-                FlexibleTimeWindow = new FlexibleTimeWindow
-                {
-                    Mode = FlexibleTimeWindowMode.FLEXIBLE
-                },
-
-                State = ScheduleState.ENABLED
-            };
-
-            var response = await _schedulerClient.CreateScheduleAsync(request);
-
-            Console.WriteLine($"Schedule ARN: {response.ScheduleArn}");
-            return response;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error creating schedule: {ex.Message}");
-            throw;
-        }
-    }
-
-    public async Task<PutTargetsResponse> CreateEventBridgeRuleAsync1(
+    public async Task<PutTargetsResponse> CreateEventBridgeRuleAsync(
         string ruleName,
         string roleArn,
         string apiDestinationArn,
         string eventBusName,
         CancellationToken cancellationToken)
     {
-        // 1. Check if the rule already exists using ListRulesAsync
-        var listResponse = await _eventBridgeClient.ListRulesAsync(new ListRulesRequest
-        {
-            EventBusName = eventBusName,
-            NamePrefix = ruleName
-        }, cancellationToken);
-
-        var existingRule = listResponse.Rules.FirstOrDefault(r => r.Name == ruleName);
-
-        var targetResponse = new PutTargetsResponse();
-
-        if (existingRule == null)
-        {
-            // 2. Create the rule if it doesn't exist
-            await _eventBridgeClient.PutRuleAsync(new PutRuleRequest
+        await _eventBridgeClient.PutRuleAsync(
+            new PutRuleRequest
             {
-                Name = ruleName,
-                EventPattern = @"{""source"": [""com.app.scheduler""]}",
-                State = RuleState.ENABLED,
+                Name = ruleName, 
+                EventPattern = @"{""source"": [""com.app.scheduler""]}", State = RuleState.ENABLED,
                 EventBusName = eventBusName
             }, cancellationToken);
-
-            // 3. Attach API Destination as target
-            targetResponse = await _eventBridgeClient.PutTargetsAsync(new PutTargetsRequest
+        
+        // Attach API Destination as target
+        var target = await _eventBridgeClient.PutTargetsAsync(
+            new PutTargetsRequest
             {
-                Rule = ruleName,
+                Rule = ruleName, 
                 EventBusName = eventBusName,
                 Targets =
-                {
+                [
                     new Target
                     {
-                        Id = "ApiDestinationTarget",
-                        Arn = apiDestinationArn,
-                        RoleArn = roleArn,
+                        Id = "ApiDestinationTarget", 
+                        Arn = apiDestinationArn, 
+                        RoleArn = GetRoleArnFromAssumedRoleArn(roleArn), 
                         InputPath = "$.detail"
                     }
-                }
+                ]
             }, cancellationToken);
-
-            Console.WriteLine($"✅ Rule '{ruleName}' created on bus '{eventBusName}'.");
-        }
-        else
-        {
-            // Return a synthetic response if rule already exists
-            targetResponse = new PutTargetsResponse
-            {
-                HttpStatusCode = HttpStatusCode.Created
-            };
-
-            Console.WriteLine($"ℹ️ Rule '{ruleName}' already exists on bus '{eventBusName}'.");
-        }
-
-        return targetResponse;
+        return target;
     }
 
     public async Task<Amazon.Scheduler.Model.CreateScheduleResponse> CreateSchedulerEventForEventBus(
@@ -281,7 +200,7 @@ public class EventBridgeService
         var scheduleRequest = new CreateScheduleRequest
         {
             Name = scheduleName,
-            ScheduleExpression = "rate(2 minutes)", // or cron(...)
+            ScheduleExpression = "rate(1 minutes)", // or cron(...)
             FlexibleTimeWindow = new FlexibleTimeWindow
             {
                 Mode = FlexibleTimeWindowMode.OFF
@@ -289,7 +208,7 @@ public class EventBridgeService
             Target = new Amazon.Scheduler.Model.Target
             {
                 Arn = $"arn:aws:events:us-east-2:{identity}:event-bus/{eventBusName}", // Event bus ARN
-                RoleArn = schedulerRoleArn, // scheduler specific role
+                RoleArn = GetRoleArnFromAssumedRoleArn(schedulerRoleArn), // scheduler specific role
                 EventBridgeParameters = eventBridgeParams,
                 Input = @"{
                     ""message"": ""Scheduler Calling API""
@@ -367,38 +286,26 @@ public class EventBridgeService
             Console.WriteLine($"No Function URL found for Lambda: {apiName}, {ex}");
             throw;
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"GetApisAsync not defined exception, {ex}");
+            throw;
+        }
     }
-
-    public async Task<PutTargetsResponse> CreateEventBridgeRuleAsync(
-        string ruleName,
-        string roleArn,
-        string apiDestinationArn,
-        string eventBusName,
-        CancellationToken cancellationToken)
+    
+    public static string GetRoleArnFromAssumedRoleArn(string assumedRoleArn)
     {
-        var ruleResponse = await _eventBridgeClient.PutRuleAsync(
-            new PutRuleRequest
-            {
-                Name = ruleName, EventPattern = @"{""source"": [""com.app.scheduler""]}", State = RuleState.ENABLED,
-                EventBusName = eventBusName
-            }, cancellationToken);
-        // Attach API Destination as target
-        var target = await _eventBridgeClient.PutTargetsAsync(
-            new PutTargetsRequest
-            {
-                Rule = ruleName, 
-                EventBusName = eventBusName,
-                Targets =
-                [
-                    new Target
-                    {
-                        Id = "ApiDestinationTarget", 
-                        Arn = apiDestinationArn, 
-                        RoleArn = roleArn, 
-                        InputPath = "$.detail"
-                    }
-                ]
-            }, cancellationToken);
-        return target;
+        // Example: arn:aws:sts::848362861133:assumed-role/csharp-app-role/CSharpAppSession
+        var parts = assumedRoleArn.Split(':');
+
+        if (parts.Length < 6 || parts[2] != "sts" || !parts[5].StartsWith("assumed-role/"))
+            throw new ArgumentException("Invalid assumed-role ARN", nameof(assumedRoleArn));
+
+        var accountId = parts[4];
+        var rolePart = parts[5]; // "assumed-role/csharp-app-role/CSharpAppSession"
+
+        var roleName = rolePart.Split('/')[1]; // "csharp-app-role"
+
+        return $"arn:aws:iam::{accountId}:role/{roleName}";
     }
 }

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ettQjtQBTcM=",
+  "dgSpecHash": "XP444q2F0gM=",
   "success": true,
   "projectFilePath": "/Users/carlosdaboin/Alkami/AWS-Apps/AwsEventManager/AwsEventManager/AwsEventManager.csproj",
   "expectedPackageFiles": [
     "/Users/carlosdaboin/.nuget/packages/awssdk.apigatewayv2/4.0.2.1/awssdk.apigatewayv2.4.0.2.1.nupkg.sha512",
-    "/Users/carlosdaboin/.nuget/packages/awssdk.core/4.0.0.28/awssdk.core.4.0.0.28.nupkg.sha512",
+    "/Users/carlosdaboin/.nuget/packages/awssdk.core/4.0.0.29/awssdk.core.4.0.0.29.nupkg.sha512",
     "/Users/carlosdaboin/.nuget/packages/awssdk.eventbridge/4.0.4.2/awssdk.eventbridge.4.0.4.2.nupkg.sha512",
     "/Users/carlosdaboin/.nuget/packages/awssdk.identitymanagement/4.0.3.3/awssdk.identitymanagement.4.0.3.3.nupkg.sha512",
     "/Users/carlosdaboin/.nuget/packages/awssdk.lambda/4.0.2.8/awssdk.lambda.4.0.2.8.nupkg.sha512",

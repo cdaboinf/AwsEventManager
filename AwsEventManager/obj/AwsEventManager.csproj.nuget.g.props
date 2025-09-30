@@ -13,7 +13,7 @@
     <SourceRoot Include="/Users/carlosdaboin/.nuget/packages/" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">/Users/carlosdaboin/.nuget/packages/awssdk.core/4.0.0.28</PkgAWSSDK_Core>
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">/Users/carlosdaboin/.nuget/packages/awssdk.core/4.0.0.29</PkgAWSSDK_Core>
     <PkgAWSSDK_SQS Condition=" '$(PkgAWSSDK_SQS)' == '' ">/Users/carlosdaboin/.nuget/packages/awssdk.sqs/4.0.1.3</PkgAWSSDK_SQS>
     <PkgAWSSDK_SecurityToken Condition=" '$(PkgAWSSDK_SecurityToken)' == '' ">/Users/carlosdaboin/.nuget/packages/awssdk.securitytoken/4.0.2.2</PkgAWSSDK_SecurityToken>
     <PkgAWSSDK_Scheduler Condition=" '$(PkgAWSSDK_Scheduler)' == '' ">/Users/carlosdaboin/.nuget/packages/awssdk.scheduler/4.0.1.2</PkgAWSSDK_Scheduler>

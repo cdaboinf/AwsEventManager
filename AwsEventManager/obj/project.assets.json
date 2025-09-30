@@ -18,7 +18,7 @@
           }
         }
       },
-      "AWSSDK.Core/4.0.0.28": {
+      "AWSSDK.Core/4.0.0.29": {
         "type": "package",
         "compile": {
           "lib/net8.0/AWSSDK.Core.dll": {
@@ -159,15 +159,15 @@
         "tools/uninstall.ps1"
       ]
     },
-    "AWSSDK.Core/4.0.0.28": {
-      "sha512": "CwCRCIbkDEc7DHwhk7BFt6k8985ytWyqwmRCiavI5/INkTyA/xSKXHS8jm8n/Xq74eRKfX7uAnD5hvI3TqpT0g==",
+    "AWSSDK.Core/4.0.0.29": {
+      "sha512": "iouNjeQmTRbBoP6sRM1X4dAIUmSgm6v5Q2UcQg/lHA7DwNRvf6PFN8QbaMrrPbRJXe1eCSzjodmGZFUmHGx5Tg==",
       "type": "package",
-      "path": "awssdk.core/4.0.0.28",
+      "path": "awssdk.core/4.0.0.29",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.core.4.0.0.28.nupkg.sha512",
+        "awssdk.core.4.0.0.29.nupkg.sha512",
         "awssdk.core.nuspec",
         "images/AWSLogo.png",
         "lib/net472/AWSSDK.Core.dll",
@@ -363,6 +363,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "AWSSDK.ApiGatewayV2 >= 4.0.2.1",
+      "AWSSDK.Core >= 4.0.0.29",
       "AWSSDK.EventBridge >= 4.0.4.2",
       "AWSSDK.IdentityManagement >= 4.0.3.3",
       "AWSSDK.Lambda >= 4.0.2.8",
@@ -417,6 +418,10 @@
           "AWSSDK.ApiGatewayV2": {
             "target": "Package",
             "version": "[4.0.2.1, )"
+          },
+          "AWSSDK.Core": {
+            "target": "Package",
+            "version": "[4.0.0.29, )"
           },
           "AWSSDK.EventBridge": {
             "target": "Package",

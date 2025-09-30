@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="AWSSDK.ApiGatewayV2" Version="4.0.2.1" />
+      <PackageReference Include="AWSSDK.Core" Version="4.0.0.29" />
       <PackageReference Include="AWSSDK.EventBridge" Version="4.0.4.2" />
       <PackageReference Include="AWSSDK.IdentityManagement" Version="4.0.3.3" />
       <PackageReference Include="AWSSDK.Lambda" Version="4.0.2.8" />

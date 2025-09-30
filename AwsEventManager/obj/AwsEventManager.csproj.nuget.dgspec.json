@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[4.0.2.1, )"
             },
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[4.0.0.29, )"
+            },
             "AWSSDK.EventBridge": {
               "target": "Package",
               "version": "[4.0.4.2, )"

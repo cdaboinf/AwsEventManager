@@ -22,3 +22,4 @@
 /Users/carlosdaboin/Alkami/AWS-Apps/AwsEventManager/AwsEventManager/bin/Debug/net9.0/AWSSDK.Lambda.dll
 /Users/carlosdaboin/Alkami/AWS-Apps/AwsEventManager/AwsEventManager/bin/Debug/net9.0/AWSSDK.ApiGatewayV2.dll
 /Users/carlosdaboin/Alkami/AWS-Apps/AwsEventManager/AwsEventManager/bin/Debug/net9.0/AWSSDK.SecurityToken.dll
+/Users/carlosdaboin/Alkami/AWS-Apps/AwsEventManager/AwsEventManager/obj/Debug/net9.0/AwsEventManager.sourcelink.json
